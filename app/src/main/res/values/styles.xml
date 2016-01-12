@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/ActionBar.Solid.Sunshine</item>
+    </style>
+
+    <!-- ActionBar style -->
+
+    <style name="ActionBar.Solid.Sunshine" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/sunshine_blue</item>
+    </style>
+
+    <!-- Main activity theme -->
+
+    <style name="ForecastTheme" parent="AppTheme">
+        <item name="actionBarStyle">@style/ActionBar.Solid.Sunshine.NoTitle</item>
+    </style>
+
+    <!-- Main activity action bar style -->
+
+    <style name="ActionBar.Solid.Sunshine.NoTitle"
+        parent="@style/ActionBar.Solid.Sunshine">
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="logo">@drawable/ic_logo</item>
+    </style>
+
+    <!-- Style for forecast listview -->
+
+    <style name="ForecastListStyle">
+        <!-- Here it's a stub.  In screens of sufficient width, this style includes modifications
+        for two-pane layout -->
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pref_units_values">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </array>
+    <array name="pref_units_options">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </array>
+
+    <string name="Clouds_fr">ابری</string>
+    <string name="Clear_fr">صاف</string>
+    <string name="Rain_fr">بارانی</string>
+    <string name="Snow_fr">برفی</string>
+    <string name="Foggy_fr">مه</string>
+    <string name="Storm_fr">رعدبرق</string>
+
+    <string name="Clouds">Clouds</string>
+    <string name="Clear">Clear</string>
+    <string name="Rain">Rain</string>
+    <string name="Snow">Snow</string>
+
+</resources>

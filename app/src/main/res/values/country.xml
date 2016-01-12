@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="auto_complete">AutoComplete</string>
+    <string name="multi_auto_complete">Multi AutoComplete</string>
+    <string-array name="list_of_countries">
+        <item >USA</item>
+        <item >Uk</item>
+        <item >Canada</item>
+        <item >Australia</item>
+        <item >France</item>
+        <item >Italy</item>
+        <item >China</item>
+        <item >Japan</item>
+        <item >Spain</item>
+    </string-array>
+
+    <string-array name="Cities">
+        <item>Tehran</item>
+        <item>Mashhad</item>
+        <item>Esfahan</item>
+        <item>Karaj</item>
+        <item>Tabriz</item>
+        <item>Shiraz</item>
+        <item>Qom</item>
+        <item>Ahvaz</item>
+        <item>Kahriz</item>
+        <item>Kermanshah</item>
+        <item>Rasht</item>
+        <item>Kerman</item>
+        <item>Zahedan</item>
+        <item>Hamadan</item>
+        <item>Azadshahr</item>
+        <item>Arak</item>
+        <item>Yazd</item>
+        <item>Ardabil</item>
+        <item>Abadan</item>
+        <item>Zanjan</item>
+        <item>Sanandaj</item>
+        <item>Qazvin</item>
+        <item>Khorramshahr</item>
+        <item>Khorramabad</item>
+        <item>Eslamshahr</item>
+        <item>Homayunshahr</item>
+        <item>Sari</item>
+        <item>Borujerd</item>
+        <item>Qarchak</item>
+        <item>Gorgan</item>
+        <item>Sabzevar</item>
+        <item>Najafabad</item>
+        <item>Neyshabur</item>
+        <item>Nazarabad</item>
+        <item>Bukan</item>
+        <item>Sirjan</item>
+        <item>Babol</item>
+        <item>Amol</item>
+        <item>Birjand</item>
+        <item>Bojnurd</item>
+        <item>Varamin</item>
+        <item>Malayer</item>
+        <item>Saveh</item>
+        <item>Khvoy</item>
+        <item>Bandar-e Bushehr</item>
+        <item>Mahabad</item>
+        <item>Saqqez</item>
+        <item>Rafsanjan</item>
+        <item>Ilam</item>
+        <item>Miandoab</item>
+        <item>Shahrud</item>
+        <item>Gonbad-e Kavus</item>
+        <item>Iranshahr</item>
+        <item>Shahr-e Kord</item>
+        <item>Torbat-e Heydariyeh</item>
+        <item>Semnan</item>
+        <item>Marand</item>
+        <item>Zabol</item>
+        <item>Quchan</item>
+        <item>Masjed-e Soleyman</item>
+        <item>Bandar-e Anzali</item>
+        <item>Baneh</item>
+        <item>Parsabad</item>
+        <item>Shahreza</item>
+        <item>Kuhdasht</item>
+        <item>Bam</item>
+        <item>Akbarabad</item>
+        <item>Fasa</item>
+        <item>Kashmar</item>
+        <item>Qeshm</item>
+        <item>Do Gonbadan</item>
+        <item>Kazerun</item>
+        <item>Ahar</item>
+        <item>Behshahr</item>
+        <item>Aligudarz</item>
+        <item>Qorveh</item>
+        <item>Borazjan</item>
+        <item>Salmas</item>
+        <item>Bonab</item>
+        <item>Behbahan</item>
+        <item>Shushtar</item>
+        <item>Khomeyn</item>
+        <item>Nahavand</item>
+        <item>Alvand</item>
+        <item>Naqadeh</item>
+        <item>Nurabad</item>
+        <item>Takestan</item>
+        <item>Minab</item>
+        <item>Abhar</item>
+        <item>Deh Dasht</item>
+        <item>Chalus</item>
+        <item>Khash</item>
+        <item>Langerud</item>
+        <item>Damghan</item>
+        <item>Firuzabad</item>
+        <item>Nurabad</item>
+        <item>Darab</item>
+        <item>Robat Karim</item>
+        <item>Kamyaran</item>
+        <item>Esfarayen</item>
+    </string-array>
+
+</resources>

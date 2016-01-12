@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="geocoder-java-0.15">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/src/main/java/com/hosseini/abbas/havakhabar/app/lib/geocoder-java-0.15.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

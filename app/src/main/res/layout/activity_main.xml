@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center|center_vertical"
+    tools:context="com.hosseini.abbas.havakhabar.app.ForecastFragment">
+
+    <!--
+    This layout is a two-pane layout for the Items master/detail flow.
+    -->
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center_horizontal" />
+
+    <fragment
+        android:id="@+id/fragment_forecast"
+        android:name="com.hosseini.abbas.havakhabar.app.ForecastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@android:layout/list_content" />
+
+
+
+
+</FrameLayout>

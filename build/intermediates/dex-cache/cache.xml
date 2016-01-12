@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/pre-dexed/debug/classes-6fc7418e5f4bc969720ae62a3ce20a8f2bbee032.jar" />
+    </item>
+    <item
+        jar="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-91315c5e5cc721dd55714a3c42544d45e972d5f7.jar" />
+    </item>
+    <item
+        jar="/media/abbas/Files/Code/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-a9c8d11a2ed4ea5028c69982b1f55a3cb4bedc86.jar" />
+    </item>
+    <item
+        jar="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/media/abbas/Files/Code/MyAndroidApp/havaApp/app/build/intermediates/pre-dexed/debug/classes-a2d3199f6348d8a3f2b17918d4ee01d3fbb97747.jar" />
+    </item>
+
+</items>
