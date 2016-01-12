@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [Sunshine] (http://github.com/paulzs/Sunshine)
 ==============================================
 
@@ -18,3 +19,7 @@ Import the project folder into Android Studio or Eclipse and run on a connected 
 
 ### Errors and Testing
 Work in Progress.
+=======
+# Android-Persian-weather
+Weather Android With Persian Language
+>>>>>>> a8d993cb8db9654f9fc188b9a7c3ffd393ff9f43
