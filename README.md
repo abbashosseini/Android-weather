@@ -3,6 +3,12 @@
 ---------
 its Was Google project and i work on it couple months ago and converted to Persian One and Change it in both side (UI, Code) .
 
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-29-55.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-30-08.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-30-17.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-31-10.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-31-47.png)
+
 ##i'm doing :
 ------------
 its get *14 days* data weather from server and put it in *SQLITE* if you have problem with connection to http://openweathermap.org/ server 
@@ -39,3 +45,19 @@ Real Example :
 		cnt=7&
 		appid=2de143494c0b295cca9337e1e96b00e0
 
+##License
+
+	Copyright (C) 2015 AbbasHosseini
+	Copyright (C) 2010 The Android Open Source Project
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
