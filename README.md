@@ -1,25 +1,41 @@
-<<<<<<< HEAD
-[Sunshine] (http://github.com/paulzs/Sunshine)
-==============================================
 
-### Overview
-An Android weather app made using the Open Weather Map API with help from Udacity
+##Android App:
+---------
+its Was Google project and i work on it couple months ago and converted to Persian One and Change it in both side (UI, Code) .
 
-### Features
-Display weather information in either metric or imperial units. Get weather for specific locations based on zip code or manual city entry. Display detailed weather information by clicking on any day in the 14 day forecast
+##i'm doing :
+------------
+its get *14 days* data weather from server and put it in *SQLITE* if you have problem with connection to http://openweathermap.org/ server 
+its actually server limitation not application bug .
 
-![](https://raw.githubusercontent.com/paulzs/Sunshine/master/Sunshine1.png)
+you can see api here :
 
-![](https://raw.githubusercontent.com/paulzs/Sunshine/master/Sunshine2.png)
+	http://openweathermap.org/api
 
-![](https://raw.githubusercontent.com/paulzs/Sunshine/master/Sunshine3.png)
+its letter changing happen in **openweathermap** webSite.
 
-### Installation
-Import the project folder into Android Studio or Eclipse and run on a connected device
+app now work with Temprory APPID. Create Valid one for your app and you can with this link see what country, city **openweathermap**
+support and see samples :
 
-### Errors and Testing
-Work in Progress.
-=======
-# Android-Persian-weather
-Weather Android With Persian Language
->>>>>>> a8d993cb8db9654f9fc188b9a7c3ffd393ff9f43
+http://bulk.openweathermap.org/sample/
+
+##RESTful :
+-----------
+app use this url for Rest:
+	
+	http://api.openweathermap.org/data/2.5/forecast/daily?
+		q=CityName&
+		mode=json or xml&
+		units=metric&
+		cnt=between 1, 10&
+		appid=2de143494c0b295cca9337e1e96b00e0
+
+Real Example :
+
+	http://api.openweathermap.org/data/2.5/forecast/daily?
+		q=London&
+		mode=json&
+		units=metric&
+		cnt=7&
+		appid=2de143494c0b295cca9337e1e96b00e0
+
