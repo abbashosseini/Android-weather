@@ -3,11 +3,11 @@
 ---------
 its Was Google project and i work on it couple months ago and converted to Persian One and Change it in both side (UI, Code) .
 
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-29-55.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-30-08.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-30-17.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-31-10.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/QuickMemo%2B_2016-01-12-21-31-47.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/3.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/4.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/5.png)
 
 ##i'm doing :
 ------------
@@ -18,12 +18,11 @@ you can see api here :
 
 	http://openweathermap.org/api
 
-its letter changing happen in **openweathermap** webSite.
+its letter changing happen in **openweathermap** webSite.app now work with Temprory APPID. Create Valid one for your app.
 
-app now work with Temprory APPID. Create Valid one for your app and you can with this link see what country, city **openweathermap**
-support and see samples :
+you can with this link see what country, city **openweathermap** support and see samples :
 
-http://bulk.openweathermap.org/sample/
+	http://bulk.openweathermap.org/sample/
 
 ##RESTful :
 -----------
