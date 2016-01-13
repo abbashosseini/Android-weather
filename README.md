@@ -10,14 +10,13 @@ its Was Google project and i work on it couple months ago and converted to Persi
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/5.png)
 
 
-#You can [Download](https://github.com/abbashosseini/Android-Persian-weather/blob/master/app/App.apk?raw=true) APK File.
+#You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.
 
 	
 
 ##i'm doing :
 ------------
-its get *14 days* data weather from server and put it in *SQLITE* if you have problem with connection to http://openweathermap.org/ server 
-its actually server limitation not application bug .
+its get *14 days* data weather from server and put it in *SQLITE* if you have problem with connection to [server ](http://openweathermap.org/) its actually server limitation not application bug .
 
 you can see api here :
 
