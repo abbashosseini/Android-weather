@@ -19,9 +19,9 @@ this app get weather one time for *14 days* and put it in [*SQLITE*](http://deve
 
 	http://openweathermap.org/api
 
-its letter changing happen in **openweathermap** webSite.app now work with Temprory APPID Create Valid one for your app 
+its little changing happen in **openweathermap** webSite.app now work with Temprory APPID Create Valid one for your app 
 i worte this couple months ago.
- 
+
 you can with this link see what country, city **openweathermap** support and see samples :
 
 	http://bulk.openweathermap.org/sample/
