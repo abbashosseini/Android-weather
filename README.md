@@ -38,6 +38,7 @@ you can with this link see what country, city **openweathermap** support and see
 ###RESTful :
 
 app use this url for Rest:
+
 	http://api.openweathermap.org/data/2.5/forecast/daily?
 		q=CityName&
 		mode=json or xml&
