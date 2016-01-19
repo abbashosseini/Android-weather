@@ -1,7 +1,7 @@
 
 ### Android App:
 
->this App base on **openweathermap** Weather webste;
+>this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.;
 
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.png)
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.png)
@@ -109,8 +109,6 @@ example
 	</forecast>
 	</weatherdata>
 	
-
-###You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.
 ```
 ###License
 
