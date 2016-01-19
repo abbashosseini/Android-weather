@@ -13,7 +13,7 @@
 
 its get *14 days* data weather from *server* or you can limit it for that see [here](http://openweathermap.org/forecast5) or now you can use **16 days** see [here](http://openweathermap.org/forecast16) for **API**.
 
-this app get weather one time for *14 days* and put it in *SQLITE* Database if you have problem with connection to [server ](http://openweathermap.org/) its actually server limitation not application bug .
+this app get weather one time for *14 days* and put it in [*SQLITE*](http://developer.android.com/guide/topics/providers/content-providers.html) Database if you have problem with connection to [server ](http://openweathermap.org/) its actually server limitation not application bug .
 
 ###you can see *api* here :
 
