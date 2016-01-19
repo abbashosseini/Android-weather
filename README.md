@@ -28,10 +28,10 @@ you can with this link see what country, city **openweathermap** support and see
 	
 ###API:
 
-	q = id || city || geographic coordinats
-	mode = typeFile
-	units =  [°F](https://en.wikipedia.org/wiki/Fahrenheit) (imperial) or [°C](https://en.wikipedia.org/wiki/Celsius) (metric)
-	cnt= Days number
+* q = id || city || geographic coordinats
+* mode = typeFile
+* units =  [°F](https://en.wikipedia.org/wiki/Fahrenheit) (imperial) or [°C](https://en.wikipedia.org/wiki/Celsius) (metric)
+* cnt= Days number
 	
 
 
