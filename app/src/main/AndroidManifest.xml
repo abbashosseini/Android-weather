@@ -60,7 +60,7 @@
         <!-- The SyncAdapter service -->
 
         <service
-            android:name=".sync.SSyncService"
+            android:name=".sync.SyncService"
             android:exported="true"
             >
             <intent-filter>
