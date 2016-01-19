@@ -54,13 +54,13 @@
             android:exported="false"
             android:syncable="true"/>
 
-        <service android:name="com.hosseini.abbas.havakhabar.app.service.SunshineService"/>
-        <receiver android:name="com.hosseini.abbas.havakhabar.app.service.SunshineService$AlarmReceiver" android:enabled="true"/>
+        <service android:name=".service.SService"/>
+        <receiver android:name=".service.SService$AlarmReceiver" android:enabled="true"/>
 
         <!-- The SyncAdapter service -->
 
         <service
-            android:name="com.hosseini.abbas.havakhabar.app.sync.SunshineSyncService"
+            android:name=".sync.SSyncService"
             android:exported="true"
             >
             <intent-filter>
@@ -73,7 +73,7 @@
 
         <!-- SyncAdapter's dummy authentication service -->
 
-        <service android:name="com.hosseini.abbas.havakhabar.app.sync.SunshineAuthenticatorService">
+        <service android:name=".sync.SAuthenticatorService">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>

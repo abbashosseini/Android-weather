@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.dates.TodayStatus;
 import com.hosseini.abbas.havakhabar.app.dates.Utilities;
-import com.hosseini.abbas.havakhabar.app.sync.SunshineSyncAdapter;
+import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
 
 /**
  * {@link ForecastAdapter} exposes a list of weather forecasts
@@ -154,9 +154,9 @@ public class ForecastAdapter extends CursorAdapter {
         // Find TextView and set weather forecast on it
         //viewHolder.descriptionView.setText(description);
 
-        if (SunshineSyncAdapter.City_Name != ""){
+        if (SSyncAdapter.City_Name != ""){
 
-            viewHolder.City__name.setText(SunshineSyncAdapter.City_Name);
+            viewHolder.City__name.setText(SSyncAdapter.City_Name);
 
         }else {
 

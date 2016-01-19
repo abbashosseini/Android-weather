@@ -6,11 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.hosseini.abbas.havakhabar.app.sync.SunshineSyncAdapter;
-
-import java.util.Date;
+import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
 
 
 public class MainActivity extends ActionBarActivity implements ForecastFragment.Callback {
@@ -49,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
                 .findFragmentById(R.id.fragment_forecast));
         forecastFragment.setUseTodayLayout(!mTwoPane);
 
-        SunshineSyncAdapter.initializeSyncAdapter(this);
+        SSyncAdapter.initializeSyncAdapter(this);
     }
 
     @Override

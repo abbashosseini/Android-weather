@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.LocationEntry;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.WeatherEntry;
-import com.hosseini.abbas.havakhabar.app.sync.SunshineSyncAdapter;
+import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
 
 import java.util.Date;
 
@@ -149,7 +149,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
 
     private void updateWeather(){
 
-        SunshineSyncAdapter.syncImmediately(getActivity());
+        SSyncAdapter.syncImmediately(getActivity());
 
     }
 

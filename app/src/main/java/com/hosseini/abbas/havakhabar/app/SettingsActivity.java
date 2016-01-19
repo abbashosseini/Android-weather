@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
-import com.hosseini.abbas.havakhabar.app.sync.SunshineSyncAdapter;
+import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
 
 public class SettingsActivity extends PreferenceActivity
         implements Preference.OnPreferenceChangeListener {
@@ -95,7 +95,7 @@ public class SettingsActivity extends PreferenceActivity
 
         if ( !mBindingPreference ) {
             if (preference.getKey().equals(getString(R.string.pref_location_key))) {
-                SunshineSyncAdapter.syncImmediately(this);
+                SSyncAdapter.syncImmediately(this);
             } else {
                 // notify code that weather may be impacted
                 getContentResolver().notifyChange(WeatherContract.WeatherEntry.CONTENT_URI, null);
