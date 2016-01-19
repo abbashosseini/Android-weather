@@ -45,14 +45,14 @@ you can with this link see what country, city **openweathermap** support and see
 ##RESTful :
 -----------
 app use this url for Rest:
-	
+```html	
 	http://api.openweathermap.org/data/2.5/forecast/daily?
 		q=CityName&
 		mode=json or xml&
 		units=metric&
 		cnt=between 1, 16&
 		appid=2de143494c0b295cca9337e1e96b00e0
-
+```
 Real Example :
 
 	http://api.openweathermap.org/data/2.5/forecast/daily?
@@ -63,7 +63,8 @@ Real Example :
 		appid=2de143494c0b295cca9337e1e96b00e0
 		
 ## JSON
-exampl
+example
+```json
 	{"cod":"200","message":0.0032,
 	"city":{"id":1851632,"name":"Shuzenji",
 	"coord":{"lon":138.933334,"lat":34.966671},
@@ -82,10 +83,10 @@ exampl
 	    "humidity":76,
 	    "weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],}
 	        ]}
-	        
+```	        
 ##XML
 example
-	
+```xml	
 	
 	<weatherdata>
 	<location>
@@ -115,7 +116,7 @@ example
 	</time>
 	</forecast>
 	</weatherdata>
-
+```
 ##License
 
 	Copyright (C) 2015 AbbasHosseini
