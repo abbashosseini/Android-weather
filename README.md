@@ -3,11 +3,11 @@
 
 >this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.;
 
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/3.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/4.png)
-![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/5.png)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.jpg)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.jpg)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/3.jpg)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/4.jpg)
+![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/5.jpg)
 
 ### i'm doing :
 
