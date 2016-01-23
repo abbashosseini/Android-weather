@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Android-persian-weather by abbashosseini</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Android-persian-weather</h1>
+        <h2>Weather Android With Persian Language</h2>
+        <a href="https://github.com/abbashosseini/Android-Persian-weather" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="android-app" class="anchor" href="#android-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Android App:</h3>
+
+<blockquote>
+<p>this App base on <strong>openweathermap</strong> Weather webste and You can <a href="https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk">Download</a> APK File.;</p>
+</blockquote>
+
+<p><img src="https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.jpg" alt="ScreenShot">
+<img src="https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.jpg" alt="ScreenShot">
+<img src="https://github.com/abbashosseini/Android-Persian-weather/blob/master/3.jpg" alt="ScreenShot">
+<img src="https://github.com/abbashosseini/Android-Persian-weather/blob/master/4.jpg" alt="ScreenShot">
+<img src="https://github.com/abbashosseini/Android-Persian-weather/blob/master/5.jpg" alt="ScreenShot"></p>
+
+<h3>
+<a id="im-doing-" class="anchor" href="#im-doing-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>i'm doing :</h3>
+
+<p>its get <em>14 days</em> data weather from <em>server</em> or you can limit it for that see <a href="http://openweathermap.org/forecast5">here</a> or now you can use <strong>16 days</strong> see <a href="http://openweathermap.org/forecast16">here</a> for <strong>API</strong>.</p>
+
+<p>this app get weather one time for <em>14 days</em> and put it in <a href="http://developer.android.com/guide/topics/providers/content-providers.html"><em>SQLITE</em></a> Database if you have problem with connection to <a href="http://openweathermap.org/">server </a> its actually server limitation not application bug .</p>
+
+<h3>
+<a id="you-can-see-api-here-" class="anchor" href="#you-can-see-api-here-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>you can see <em>api</em> here :</h3>
+
+<pre><code>http://openweathermap.org/api
+</code></pre>
+
+<p>its little changing happen in <strong>openweathermap</strong> webSite.app now work with Temprory APPID Create Valid one for your app 
+i worte this couple months ago.</p>
+
+<p>you can with this link see what country, city <strong>openweathermap</strong> support and see samples :</p>
+
+<pre><code>http://bulk.openweathermap.org/sample/
+</code></pre>
+
+<h3>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API:</h3>
+
+<ul>
+<li>q = id || city || geographic coordinats</li>
+<li>mode = typeFile</li>
+<li>units =  <a href="https://en.wikipedia.org/wiki/Fahrenheit">°F</a> (imperial) or <a href="https://en.wikipedia.org/wiki/Celsius">°C</a> (metric)</li>
+<li>cnt= Days number</li>
+</ul>
+
+<h3>
+<a id="restful-" class="anchor" href="#restful-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RESTful :</h3>
+
+<p>app use this url for Rest:</p>
+
+<pre><code>http://api.openweathermap.org/data/2.5/forecast/daily?
+    q=CityName&amp;
+    mode=json or xml&amp;
+    units=metric&amp;
+    cnt=between 1, 16&amp;
+    appid=2de143494c0b295cca9337e1e96b00e0
+</code></pre>
+
+<p>Real Example :</p>
+
+<pre><code>http://api.openweathermap.org/data/2.5/forecast/daily?
+    q=London&amp;
+    mode=json&amp;
+    units=metric&amp;
+    cnt=7&amp;
+    appid=2de143494c0b295cca9337e1e96b00e0
+</code></pre>
+
+<h3>
+<a id="json" class="anchor" href="#json" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JSON</h3>
+
+<p>example</p>
+
+<div class="highlight highlight-source-json"><pre>    {<span class="pl-s"><span class="pl-pds">"</span>cod<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>200<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>message<span class="pl-pds">"</span></span>:<span class="pl-c1">0.0032</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>city<span class="pl-pds">"</span></span>:{<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>:<span class="pl-c1">1851632</span>,<span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>Shuzenji<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>coord<span class="pl-pds">"</span></span>:{<span class="pl-s"><span class="pl-pds">"</span>lon<span class="pl-pds">"</span></span>:<span class="pl-c1">138.933334</span>,<span class="pl-s"><span class="pl-pds">"</span>lat<span class="pl-pds">"</span></span>:<span class="pl-c1">34.966671</span>},
+    <span class="pl-s"><span class="pl-pds">"</span>country<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>JP<span class="pl-pds">"</span></span>},
+    <span class="pl-s"><span class="pl-pds">"</span>cnt<span class="pl-pds">"</span></span>:<span class="pl-c1">10</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>list<span class="pl-pds">"</span></span>:[{
+        <span class="pl-s"><span class="pl-pds">"</span>dt<span class="pl-pds">"</span></span>:<span class="pl-c1">1406080800</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>temp<span class="pl-pds">"</span></span>:{
+            <span class="pl-s"><span class="pl-pds">"</span>day<span class="pl-pds">"</span></span>:<span class="pl-c1">297.77</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>min<span class="pl-pds">"</span></span>:<span class="pl-c1">293.52</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>max<span class="pl-pds">"</span></span>:<span class="pl-c1">297.77</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>night<span class="pl-pds">"</span></span>:<span class="pl-c1">293.52</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>eve<span class="pl-pds">"</span></span>:<span class="pl-c1">297.77</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>morn<span class="pl-pds">"</span></span>:<span class="pl-c1">297.77</span>},
+        <span class="pl-s"><span class="pl-pds">"</span>pressure<span class="pl-pds">"</span></span>:<span class="pl-c1">925.04</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>humidity<span class="pl-pds">"</span></span>:<span class="pl-c1">76</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>weather<span class="pl-pds">"</span></span>:[{<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>:<span class="pl-c1">803</span>,<span class="pl-s"><span class="pl-pds">"</span>main<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>Clouds<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>broken clouds<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>icon<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>04d<span class="pl-pds">"</span></span>}],}
+            ]}</pre></div>
+
+<h3>
+<a id="xml" class="anchor" href="#xml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XML</h3>
+
+<p>example</p>
+
+<div class="highlight highlight-text-xml"><pre>
+    &lt;<span class="pl-ent">weatherdata</span>&gt;
+    &lt;<span class="pl-ent">location</span>&gt;
+    &lt;<span class="pl-ent">name</span>&gt;London&lt;/<span class="pl-ent">name</span>&gt;
+    &lt;<span class="pl-ent">type</span>/&gt;
+    &lt;<span class="pl-ent">country</span>&gt;GB&lt;/<span class="pl-ent">country</span>&gt;
+    &lt;<span class="pl-ent">timezone</span>/&gt;
+    &lt;<span class="pl-ent">location</span> <span class="pl-e">altitude</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">latitude</span>=<span class="pl-s"><span class="pl-pds">"</span>51.50853<span class="pl-pds">"</span></span> <span class="pl-e">longitude</span>=<span class="pl-s"><span class="pl-pds">"</span>-0.12574<span class="pl-pds">"</span></span> <span class="pl-e">geobase</span>=<span class="pl-s"><span class="pl-pds">"</span>geonames<span class="pl-pds">"</span></span> <span class="pl-e">geobaseid</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>/&gt;
+    &lt;/<span class="pl-ent">location</span>&gt;
+    &lt;<span class="pl-ent">credit</span>/&gt;
+    &lt;<span class="pl-ent">meta</span>&gt;
+    &lt;<span class="pl-ent">lastupdate</span>/&gt;
+    &lt;<span class="pl-ent">calctime</span>&gt;0.0091&lt;/<span class="pl-ent">calctime</span>&gt;
+    &lt;<span class="pl-ent">nextupdate</span>/&gt;
+    &lt;/<span class="pl-ent">meta</span>&gt;
+    &lt;<span class="pl-ent">sun</span> <span class="pl-e">rise</span>=<span class="pl-s"><span class="pl-pds">"</span>2015-06-04T03:46:26<span class="pl-pds">"</span></span> <span class="pl-e">set</span>=<span class="pl-s"><span class="pl-pds">"</span>2015-06-04T20:11:17<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">forecast</span>&gt;
+    &lt;<span class="pl-ent">time</span> <span class="pl-e">day</span>=<span class="pl-s"><span class="pl-pds">"</span>2015-06-04<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">symbol</span> <span class="pl-e">number</span>=<span class="pl-s"><span class="pl-pds">"</span>802<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>scattered clouds<span class="pl-pds">"</span></span> <span class="pl-e">var</span>=<span class="pl-s"><span class="pl-pds">"</span>03d<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">precipitation</span>/&gt;
+    &lt;<span class="pl-ent">windDirection</span> <span class="pl-e">deg</span>=<span class="pl-s"><span class="pl-pds">"</span>148<span class="pl-pds">"</span></span> <span class="pl-e">code</span>=<span class="pl-s"><span class="pl-pds">"</span>SSE<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>South-southeast<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">windSpeed</span> <span class="pl-e">mps</span>=<span class="pl-s"><span class="pl-pds">"</span>5.12<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>Gentle Breeze<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">temperature</span> <span class="pl-e">day</span>=<span class="pl-s"><span class="pl-pds">"</span>23.65<span class="pl-pds">"</span></span> <span class="pl-e">min</span>=<span class="pl-s"><span class="pl-pds">"</span>17.27<span class="pl-pds">"</span></span> <span class="pl-e">max</span>=<span class="pl-s"><span class="pl-pds">"</span>23.74<span class="pl-pds">"</span></span> <span class="pl-e">night</span>=<span class="pl-s"><span class="pl-pds">"</span>17.27<span class="pl-pds">"</span></span> <span class="pl-e">eve</span>=<span class="pl-s"><span class="pl-pds">"</span>22.94<span class="pl-pds">"</span></span> <span class="pl-e">morn</span>=<span class="pl-s"><span class="pl-pds">"</span>17.54<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">pressure</span> <span class="pl-e">unit</span>=<span class="pl-s"><span class="pl-pds">"</span>hPa<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>1032.24<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">humidity</span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>70<span class="pl-pds">"</span></span> <span class="pl-e">unit</span>=<span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">clouds</span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>scattered clouds<span class="pl-pds">"</span></span> <span class="pl-e">all</span>=<span class="pl-s"><span class="pl-pds">"</span>36<span class="pl-pds">"</span></span> <span class="pl-e">unit</span>=<span class="pl-s"><span class="pl-pds">"</span>%<span class="pl-pds">"</span></span>/&gt;
+    &lt;/<span class="pl-ent">time</span>&gt;
+    &lt;/<span class="pl-ent">forecast</span>&gt;
+    &lt;/<span class="pl-ent">weatherdata</span>&gt;
+</pre></div>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<pre><code>Copyright (C) 2015 AbbasHosseini
+Copyright (C) 2010 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/abbashosseini/Android-Persian-weather/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/abbashosseini/Android-Persian-weather/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/abbashosseini/Android-Persian-weather"></a> is maintained by <a href="https://github.com/abbashosseini">abbashosseini</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
