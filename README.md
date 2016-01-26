@@ -26,7 +26,7 @@ you can with this link see what country, city **openweathermap** support and see
 
 	http://bulk.openweathermap.org/sample/
 	
-###API:
+###FORMAT:
 
 * q = id || city || geographic coordinats
 * mode = typeFile
