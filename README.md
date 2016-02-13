@@ -5,7 +5,7 @@
 
 #### Language Support :
 	* Persian
-	* English (added very SOON)
+	* English (i will added very SOON)
 
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.jpg)
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.jpg)
