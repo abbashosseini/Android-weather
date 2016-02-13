@@ -3,6 +3,10 @@
 
 >this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.;
 
+#### Language Support :
+	* Persian
+	* English (added very SOON)
+
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/1.jpg)
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/2.jpg)
 ![ScreenShot](https://github.com/abbashosseini/Android-Persian-weather/blob/master/3.jpg)
