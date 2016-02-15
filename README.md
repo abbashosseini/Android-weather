@@ -1,7 +1,7 @@
 
 ### Android App:
 
->this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/App.apk) APK File.;
+>this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/app-release.apk) APK File.;
 
 #### Language Support :
 
