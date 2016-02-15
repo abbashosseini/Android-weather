@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="sabrkonid">صبر کنید</string>
-    <string name="sabrkonidnew">صبر  کنید</string>
     <string name="keshvar">Keshvar</string>
-    <string name="mail">AbbasHosseini@mail.com</string>
+    <string name="mail" translatable="false">AbbasHosseini@mail.com</string>
     <string name="sazande">سازنده : </string>
     <string name="share_HashTag">#نرم افزار هوا خبر</string>
 </resources>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:locale="en"
+    tools:ignore="MissingTranslation">
     <string name="app_name">Weather News</string>
-    <string name="sharefooter_sign">
-        #WeatherNews App
-    </string>
     <string name="Clear">Clear</string>
     <string name="Clear_fr">Clear</string>
     <string name="Clouds">Clouds</string>
@@ -15,7 +15,6 @@
     <string name="Snow_fr">Snow</string>
     <string name="Storm_fr">thunderstorm</string>
     <string name="action_map">Location</string>
-    <string name="action_refresh">Refresh</string>
     <string name="action_settings">Settings</string>
     <string name="action_share">Share</string>
     <string name="cancel">Cancel</string>
@@ -39,12 +38,10 @@
     <string name="hello_world">hello there!</string>
     <string name="keshvar">Country</string>
     <string name="okey">Done</string>
-    <string name="pref_enable_notifications_default">true</string>
     <string name="pref_enable_notifications_false">Deactive</string>
     <string name="pref_enable_notifications_label">Alert</string>
     <string name="pref_enable_notifications_true">Active</string>
     <string name="pref_location_default">London, UK</string>
-    <string name="pref_location_key">location</string>
     <string name="pref_location_label">City name</string>
     <string name="pref_units_label">Units</string>
     <string name="sabrkonid">Wait</string>
@@ -124,4 +121,5 @@
     <string name="Wind_NorthWest">
         North West
     </string>
+    <string name="Wind_Southwest">South West</string>
 </resources>

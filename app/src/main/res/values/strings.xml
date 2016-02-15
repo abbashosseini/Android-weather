@@ -7,24 +7,24 @@
     <string name="action_refresh" translatable="false">Refresh</string>
     <string name="title_activity_detail">جزئیات</string>
     <string name="title_activity_settings">تنظیمات</string>
-    <string name="sharefooter_sign">
+    <string name="sharefooter_sign" translatable="false">
         #نرم افزار هوا خبر
     </string>
 
     <!-- Strings related to Notification preference -->
 
-    <string name="pref_last_sync">last_sync</string>
+    <string name="pref_last_sync" translatable="false">last_sync</string>
 
     <!-- Strings for formatting weather-related data -->
 
     <string name="pref_location_label">نام شهر</string>
     <string name="pref_location_key" translatable="false">location</string>
-    <string name="pref_location_default" translatable="false">Tehran,ir</string>
+    <string name="pref_location_default">Tehran,ir</string>
 
-    <string name="pref_units_label" translatable="false">واحد</string>
+    <string name="pref_units_label">واحد</string>
     <string name="pref_units_key" translatable="false">units</string>
-    <string name="pref_units_metric">Metric</string>
-    <string name="pref_units_imperial">Imperial</string>
+    <string name="pref_units_metric" translatable="false">Metric</string>
+    <string name="pref_units_imperial" translatable="false">Imperial</string>
 
     <string name="action_map">موقعیت مکانی</string>
 
@@ -43,7 +43,7 @@
 
     <!-- Date format [CHAR LIMIT=NONE] -->
 
-    <string name="format_full_friendly_date">
+    <string name="format_full_friendly_date" translatable="false">
         <xliff:g id="month">%1$s</xliff:g>,
         <xliff:g id="day">%2$s</xliff:g>
     </string>
@@ -51,7 +51,7 @@
     <!-- Strings for formatting weather-related data -->
     <!-- Temperature format [CHAR LIMIT=5] -->
 
-    <string name="format_temperature"><xliff:g id="temp">%1.0f</xliff:g>\u00B0
+    <string name="format_temperature" translatable="false"><xliff:g id="temp">%1.0f</xliff:g>\u00B0
     </string>
 
     <!-- Windspeed formats -->
@@ -89,7 +89,7 @@
 
     <!-- Share format [CHAR LIMIT=NONE]-->
 
-    <string name="format_share">
+    <string name="format_share" translatable="false">
         Weather for
         <xliff:g id="date">%1$s</xliff:g>
         in<xliff:g id="location">%2$s</xliff:g>:
@@ -101,8 +101,8 @@
 
     <!-- SyncAdapter related -->
 
-    <string name="sync_account_type">havakhabar.hosseini.com</string>
-    <string name="content_authority">com.hosseini.abbas.havakhabar.app</string>
+    <string name="sync_account_type" translatable="false">havakhabar.hosseini.com</string>
+    <string name="content_authority" translatable="false">com.hosseini.abbas.havakhabar.app</string>
 
     <!-- Strings related to Notification Enabled preference -->
 
@@ -124,11 +124,10 @@
 
     <!-- Strings related to Notification preference -->
 
-    <string name="pref_last_notification">last_notification</string>
+    <string name="pref_last_notification" translatable="false">last_notification</string>
     <string name="sabrkonid">صبر کنید</string>
-    <string name="sabrkonidnew">صبر کنید</string>
     <string name="keshvar">Keshvar</string>
-    <string name="mail">AbbasHosseini@mail.com</string>
+    <string name="mail" translatable="false">AbbasHosseini@mail.com</string>
     <string name="sazande">سازنده :</string>
     <string name="share_HashTag">#نرم افزار هوا خبر</string>
 
@@ -165,13 +164,14 @@
         لطفا نام شهر را وارد کرده و منتظر اطلاعات بمانید .
     </string>
     <string name="unknown">نامشخص</string>
-    <string name="wind_direction_name">"از سمت "</string>
+    <string name="wind_direction_name">از سمت </string>
     <string name="Wind_North">شمال</string>
     <string name="Wind_northeast">شمال شرقی</string>
     <string name="Wind_Eastern">شرق</string>
     <string name="Wind_Southeast">جنوب شرقی</string>
     <string name="Wind_South">جنوب</string>
-    <string name="Wind_Southwest">" جنوب غربی"</string>
+    <string name="Wind_Southwest"> جنوب غربی</string>
     <string name="Wind_Western">غرب</string>
     <string name="Wind_NorthWest">شمال غرب</string>
+    <string name="Wind_west"></string>
 </resources>
