@@ -24,7 +24,7 @@ import android.util.Log;
 
 import com.hosseini.abbas.havakhabar.app.MainActivity;
 import com.hosseini.abbas.havakhabar.app.R;
-import com.hosseini.abbas.havakhabar.app.Utility;
+import com.hosseini.abbas.havakhabar.app.Other.Utility;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.LocationEntry;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.WeatherEntry;
@@ -76,11 +76,10 @@ public class SSyncAdapter extends AbstractThreadedSyncAdapter {
 
     @Override
     public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
-        //Log.d(LOG_TAG, "Starting sync");
 
 
         //Temp AppID
-        String ID = "2de143494c0b295cca9337e1e96b00e0";
+        String ID = "44db6a862fba0b067b1930da0d769e98";
         // Getting the zipcode to send to the API
         String locationQuery = Utility.getPreferredLocation(getContext());
 
@@ -146,7 +145,7 @@ public class SSyncAdapter extends AbstractThreadedSyncAdapter {
             reader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = reader.readLine()) != null) {
-                buffer.append(line + "\n");
+                buffer.append(line).append("\n");
             }
 
             if (buffer.length() == 0) {
@@ -299,7 +298,6 @@ public class SSyncAdapter extends AbstractThreadedSyncAdapter {
 
         // This will only happen if there was an error getting or parsing the forecast.
 
-        return;
     }
 
     private void notifyWeather() {
@@ -325,7 +323,8 @@ public class SSyncAdapter extends AbstractThreadedSyncAdapter {
 
                 Uri weatherUri = WeatherEntry.buildWeatherLocationWithDate(locationQuery, WeatherContract.getDbDateString(new Date()));
 
-                Cursor cursor = context.getContentResolver().query(weatherUri, NOTIFY_WEATHER_PROJECTION, null, null, null);
+                Cursor cursor = context.getContentResolver()
+                        .query(weatherUri, NOTIFY_WEATHER_PROJECTION, null, null, null);
 
                 if (cursor.moveToFirst()) {
                     int weatherId = cursor.getInt(INDEX_WEATHER_ID);
@@ -392,7 +391,6 @@ public class SSyncAdapter extends AbstractThreadedSyncAdapter {
         long locationId;
 
         City_Name = cityName;
-        //Log.v(LOG_TAG, "inserting " + cityName + ", with coord: " + lat + ", " + lon);
 
         // First, check if the location with this city name exists in the db
         Cursor locationCursor = getContext().getContentResolver().query(

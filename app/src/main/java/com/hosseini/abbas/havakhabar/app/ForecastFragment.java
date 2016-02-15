@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.hosseini.abbas.havakhabar.app.Other.Utility;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.LocationEntry;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.WeatherEntry;
@@ -31,7 +32,6 @@ import java.util.Date;
  */
 
 public class ForecastFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
-    public static final String LOG_TAG = ForecastFragment.class.getSimpleName();
     private static final int FORECAST_LOADER = 0;
     private ListView mListView;
     private int mPosition = ListView.INVALID_POSITION;
@@ -75,11 +75,10 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         /**
          * Callback for when an item has been selected.
          */
-        public void onItemSelected(String date);
+        void onItemSelected(String date);
     }
 
-    public ForecastFragment() {
-    }
+    public ForecastFragment() {}
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -169,7 +168,9 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getActivity(),"لطفا نام شهر را وارد کرده و منتظر اطلاعات بمانید .",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            getActivity().getApplicationContext().getString(R.string.toast_message_weather_loadserver)
+                            ,Toast.LENGTH_LONG).show();
                 }
             }
 

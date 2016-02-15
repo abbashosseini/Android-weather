@@ -7,6 +7,7 @@ import android.provider.BaseColumns;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import java.util.Locale;
 
 /**
  * Defines table and column names for the weather database.
@@ -162,7 +163,7 @@ public class WeatherContract {
         // Because the API returns a unix timestamp (measured in seconds),
         // it must be converted to milliseconds in order to be converted to valid date.
 
-        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
         return sdf.format(date);
     }
 
@@ -173,7 +174,7 @@ public class WeatherContract {
      */
 
     public static Date getDateFromDb(String dateText) {
-        SimpleDateFormat dbDateFormat = new SimpleDateFormat(DATE_FORMAT);
+        SimpleDateFormat dbDateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.ENGLISH);
         try {
             return dbDateFormat.parse(dateText);
         } catch ( ParseException e ) {

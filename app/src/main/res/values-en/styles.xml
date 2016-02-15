@@ -23,7 +23,7 @@
     <style name="ActionBar.Solid.WeatherNews.NoTitle"
         parent="@style/ActionBar.Solid.WeatherNews">
         <item name="displayOptions">useLogo|showHome</item>
-        <item name="logo">@drawable/ic_logo</item>
+        <item name="logo">@drawable/ic_logo_en</item>
     </style>
 
     <!-- Style for forecast listview -->

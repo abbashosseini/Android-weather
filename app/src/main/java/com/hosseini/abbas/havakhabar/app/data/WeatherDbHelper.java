@@ -6,11 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.LocationEntry;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.WeatherEntry;
 
-/**
- *
- * Created by paulshi on 9/18/14.
- */
-
 public class WeatherDbHelper extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;

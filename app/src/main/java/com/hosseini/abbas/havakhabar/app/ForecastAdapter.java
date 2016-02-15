@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,16 @@ import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dateparser.hosseini.persiantime.dates.PersianDate.CurrentDate;
+import com.dateparser.hosseini.persiantime.dates.PersianDate.GenerateDates;
+import com.hosseini.abbas.havakhabar.app.Other.Utility;
+import com.hosseini.abbas.havakhabar.app.Other.WhichFont;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
-import com.hosseini.abbas.havakhabar.app.dates.TodayStatus;
-import com.hosseini.abbas.havakhabar.app.dates.Utilities;
 import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * {@link ForecastAdapter} exposes a list of weather forecasts
@@ -101,23 +108,30 @@ public class ForecastAdapter extends CursorAdapter {
 
 
         //Status Today
-        if(Utility.getFriendlyDayString(context, dateString).contains("امروز")) {
+        if(Utility.getFriendlyDayString(context, dateString)
+                .contains(context.getString(R.string.today))) {
+
             int icon = R.drawable.app_icon;
             CharSequence tickerText = context.getResources().getString(R.string.app_name);
             long when = System.currentTimeMillis();
 
             Notification notification = new Notification(icon, tickerText, when);
 
-            TodayStatus Status = new TodayStatus();
+            String currentdateOS = new CurrentDate()
+                                    .getdateWithMonthLetters(GenerateDates.getCurrentDate());
+
+            if (Locale.getDefault().getLanguage().equals("en")){
+                SimpleDateFormat format = new SimpleDateFormat("yyyy MMM dd", Locale.ENGLISH);
+                currentdateOS = format.format(new Date());
+            }
 
 
-            CharSequence contentTitle = "هواخبر -" + " " + Status.TodayStatus(Utilities.getCurrentShamsidate());
-
-            CharSequence contentText = null;
-
-
-                contentText = "امروز : ببیشترین دما " + Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP))
-                        + "کمترین دما " + Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP));
+            String contentTitle = context.getString(R.string.app_name)+
+                                        " - " +
+                                        currentdateOS;
+            String contentText =
+                    context.getString(R.string.statusbar_degrees_max) + Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP)) +
+                    context.getString(R.string.statusbar_degrees_min) + Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP));
 
 
             notification.setLatestEventInfo(context, contentTitle, contentText, PendingIntent.getActivity(context, 0, new Intent(), 0));
@@ -128,21 +142,21 @@ public class ForecastAdapter extends CursorAdapter {
 
         // Find TextView and set formatted date on it
         TextView dateView = (TextView) view.findViewById(R.id.list_item_date_textview);
-        dateView.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/ADastNevis.ttf"));
+        dateView.setTypeface(WhichFont.Fontmethod(context.getApplicationContext(), ""));
         if (Utility.getFriendlyDayString(context, dateString).equals("Saturday")) {
-            viewHolder.dateView.setText("شنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_saturday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Sunday")) {
-            viewHolder.dateView.setText("یکشنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_sunday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Monday")) {
-            viewHolder.dateView.setText("دوشنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_monday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Tuesday")) {
-            viewHolder.dateView.setText("سه شنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_tuesday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Wednesday")) {
-            viewHolder.dateView.setText("چهار شنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_wednesday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Thursday")) {
-            viewHolder.dateView.setText("پنج شنبه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_Thursday));
         }else if (Utility.getFriendlyDayString(context, dateString).equals("Friday")) {
-            viewHolder.dateView.setText("جمعه");
+            viewHolder.dateView.setText(context.getString(R.string.week_day_name_friday));
         }else{
             viewHolder.dateView.setText(Utility.getFriendlyDayString(context, dateString));
         }
@@ -164,22 +178,21 @@ public class ForecastAdapter extends CursorAdapter {
 
         }
 
-        viewHolder.City__name.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Existence-Light.otf"));
+        viewHolder.City__name.setTypeface(WhichFont.Fontmethod(context,  "fonts/Existence-Light.otf"));
 
-        String Hava = "آسمانی ";
-        viewHolder.descriptionView.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/AAfsaneh.ttf"));
+        viewHolder.descriptionView.setTypeface(WhichFont.Fontmethod(context, "fonts/AAfsaneh.ttf"));
         if (description.equalsIgnoreCase("Clouds")){
-            viewHolder.descriptionView.setText(Hava+"ابری");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_clouds));
         }else if (description.equalsIgnoreCase("Clear")){
-            viewHolder.descriptionView.setText(Hava+"آرام");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_clear));
         }else if (description.equalsIgnoreCase("Rain")){
-            viewHolder.descriptionView.setText(Hava+"بارانی");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_rain));
         }else if (description.equalsIgnoreCase("Snow")){
-            viewHolder.descriptionView.setText(Hava+"برفی");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_snowy));
         }else if (description.equalsIgnoreCase("Storm")){
-            viewHolder.descriptionView.setText(Hava+"همراه با رعدبرق");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_storm));
         }else if (description.equalsIgnoreCase("Fog")){
-            viewHolder.descriptionView.setText(Hava+"همراه با مه");
+            viewHolder.descriptionView.setText(context.getString(R.string.sky_state_foggy));
         }
 
 
@@ -192,13 +205,13 @@ public class ForecastAdapter extends CursorAdapter {
         // Read high temperature from cursor
         double high = cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP);
         //TextView highView = (TextView) view.findViewById(R.id.list_item_high_textview);
-        viewHolder.highTempView.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/ADastNevis.ttf"));
+        viewHolder.highTempView.setTypeface(WhichFont.Fontmethod(context, ""));
         viewHolder.highTempView.setText(Utility.formatTemperature(context, high));
 
         // Read low temperature from cursor
         double low = cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP);
         //TextView lowView = (TextView) view.findViewById(R.id.list_item_low_textview);
-        viewHolder.lowTempView.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/ADastNevis.ttf"));
+        viewHolder.lowTempView.setTypeface(WhichFont.Fontmethod(context, ""));
         viewHolder.lowTempView.setText(Utility.formatTemperature(context, low));
     }
 

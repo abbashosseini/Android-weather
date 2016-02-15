@@ -1,5 +1,7 @@
 package com.hosseini.abbas.havakhabar.app;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
@@ -21,23 +23,24 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.hosseini.abbas.havakhabar.app.Other.Utility;
+import com.hosseini.abbas.havakhabar.app.Other.WhichFont;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract.WeatherEntry;
 
 /**
- * Created by paulshi on 10/8/14.
+ * Created by Abbas on 10/8/14.
  */
 
+@SuppressLint("ValidFragment")
 public class DetailFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
-    public static final String DATE_KEY = "forecast_date";
-    private static final String LOCATION_KEY = "location";
-    private static final String LOG_TAG = DetailFragment.class.getSimpleName();
 
-    private static final String FORECAST_SHARE_HASHTAG = "#نرم افزار هوا خبر";
+    private String FORECAST_SHARE_HASHTAG;
     private ShareActionProvider mShareActionProvider;
     private String mLocation;
     private String mForecast;
     private String mDateStr;
+    private Context mcontext;
 
     private static final int DETAIL_LOADER = 0;
 
@@ -67,12 +70,20 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
     public DetailFragment() {
         setHasOptionsMenu(true);
+    }
+    public DetailFragment(Context context) {
+        setHasOptionsMenu(true);
+
+        mcontext = context;
+
+        FORECAST_SHARE_HASHTAG = mcontext
+                .getString(R.string.share_HashTag);
 
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putString(LOCATION_KEY, mLocation);
+        outState.putString(DetailActivity.LOCATION_KEY, mLocation);
         super.onSaveInstanceState(outState);
     }
 
@@ -97,26 +108,31 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
         }
 
         if (savedInstanceState != null) {
-            mLocation = savedInstanceState.getString(LOCATION_KEY);
+            mLocation = savedInstanceState.getString(DetailActivity.LOCATION_KEY);
         }
 
         View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
         mIconView = (ImageView) rootView.findViewById(R.id.detail_icon);
+
         mDateView = (TextView) rootView.findViewById(R.id.detail_date_textview);
-        mDateView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mDateView.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
+
         mFriendlyDateView = (TextView) rootView.findViewById(R.id.detail_day_textview);
-        mFriendlyDateView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/Far_TitrDF.ttf"));
+        mFriendlyDateView.setTypeface(WhichFont.Fontmethod(getActivity(), "fonts/Far_TitrDF.ttf"));
+
         mDescriptionView = (TextView) rootView.findViewById(R.id.detail_forecast_textview);
+
         mHighTempView = (TextView) rootView.findViewById(R.id.detail_high_textview);
-        mHighTempView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mHighTempView.setTypeface(WhichFont.Fontmethod(getActivity(), "fonts/Far_TitrDF.ttf"));
+
         mLowTempView = (TextView) rootView.findViewById(R.id.detail_low_textview);
-        mLowTempView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mLowTempView.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
         mHumidityView = (TextView) rootView.findViewById(R.id.detail_humidity_textview);
-        mHumidityView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mHumidityView.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
         mWindView = (TextView) rootView.findViewById(R.id.detail_wind_textview);
-        mWindView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mWindView.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
         mPressureView = (TextView) rootView.findViewById(R.id.detail_pressure_textview);
-        mPressureView.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+        mPressureView.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
         return rootView;
     }
 
@@ -154,7 +170,7 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
-            mLocation = savedInstanceState.getString(LOCATION_KEY);
+            mLocation = savedInstanceState.getString(DetailActivity.LOCATION_KEY);
         }
 
         Bundle arguments = getArguments();
@@ -200,32 +216,30 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
 
             mIconView.setImageResource(Utility.getArtResourceForWeatherCondition(weatherId));
 
-            // Read date from cursor and update views for day of week and date
+            // Read date from cursor and update views for day of week .
 
             String date = data.getString(data.getColumnIndex(WeatherEntry.COLUMN_DATETEXT));
             String friendlyDateText = Utility.getDayName(getActivity(), date);
-            String dateText = Utility.getFormattedMonthDay(getActivity(), date);
-
+            String dateText = Utility.getFormattedMonthDay(date);
 
             if (friendlyDateText.equals("Saturday")) {
-                mFriendlyDateView.setText("شنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_saturday));
             }else if (friendlyDateText.equals("Sunday")) {
-                mFriendlyDateView.setText("یکشنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_sunday));
             }else if (friendlyDateText.equals("Monday")) {
-                mFriendlyDateView.setText("دوشنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_monday));
             }else if (friendlyDateText.equals("Tuesday")) {
-                mFriendlyDateView.setText("سه شنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_tuesday));
             }else if (friendlyDateText.equals("Wednesday")) {
-                mFriendlyDateView.setText("چهار شنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_wednesday));
             }else if (friendlyDateText.equals("Thursday")) {
-                mFriendlyDateView.setText("پنج شنبه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_Thursday));
             }else if (friendlyDateText.equals("Friday")) {
-                mFriendlyDateView.setText("جمعه");
+                mFriendlyDateView.setText(mcontext.getString(R.string.week_day_name_friday));
             }else if (friendlyDateText.length() > 4)
-                mFriendlyDateView.setText("امروز");
+                mFriendlyDateView.setText(mcontext.getString(R.string.today));
             else
-                mFriendlyDateView.setText("فردا");
-
+                mFriendlyDateView.setText(mcontext.getString(R.string.tomorrow));
 
             //mFriendlyDateView.setText(friendlyDateText);
             mDateView.setText(dateText);
@@ -236,48 +250,72 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
                     WeatherEntry.COLUMN_SHORT_DESC));
 
 
-            ScrollView BackTablet = (ScrollView) getActivity().findViewById(R.id.TabletBackGroundIMG);
+            ScrollView appropriateBackground = (ScrollView) getActivity().findViewById(R.id.TabletBackGroundIMG);
             if (getResources().getConfiguration().orientation == 2)
             if (description.equals("Clouds")){
-                BackTablet.setBackgroundResource(R.drawable.clouds_l);
+
+                appropriateBackground.setBackgroundResource(R.drawable.clouds_l);
                 description=getResources().getString(R.string.Clouds_fr);
+
             }else if (description.equals("Clear")){
-                BackTablet.setBackgroundResource(R.drawable.foggy_l);
+
+                appropriateBackground.setBackgroundResource(R.drawable.foggy_l);
                 description=getResources().getString(R.string.Clear_fr);
+
             }else if (description.equals("Rain")){
-                BackTablet.setBackgroundResource(R.drawable.rain_l);
+
+                appropriateBackground.setBackgroundResource(R.drawable.rain_l);
                 description=getResources().getString(R.string.Rain_fr);
+
             }else if (description.equals("Snow")){
-                BackTablet.setBackgroundResource(R.drawable.snowl);
+
+                appropriateBackground.setBackgroundResource(R.drawable.snowl);
                 description=getResources().getString(R.string.Snow_fr);
+
             }else if (description.equals("Storm")){
-                BackTablet.setBackgroundResource(R.drawable.strom_l);
+
+                appropriateBackground.setBackgroundResource(R.drawable.strom_l);
                 description=getResources().getString(R.string.Storm_fr);
+
             }else if (description.equals("Fog")){
-                BackTablet.setBackgroundResource(R.drawable.foggy_l);
+
+                appropriateBackground.setBackgroundResource(R.drawable.foggy_l);
                 description=getResources().getString(R.string.Foggy_fr);
+
             }
 
 
             if (getResources().getConfiguration().orientation == 1)
                 if (description.equals("Clouds")){
-                    BackTablet.setBackgroundResource(R.drawable.clouds_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.clouds_p);
                     description=getResources().getString(R.string.Clouds_fr);
+
                 }else if (description.equals("Clear")){
-                    BackTablet.setBackgroundResource(R.drawable.foggy_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.foggy_p);
                     description=getResources().getString(R.string.Clear_fr);
+
                 }else if (description.equals("Rain")){
-                    BackTablet.setBackgroundResource(R.drawable.rain_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.rain_p);
                     description=getResources().getString(R.string.Rain_fr);
+
                 }else if (description.equals("Snow")){
-                    BackTablet.setBackgroundResource(R.drawable.snow_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.snow_p);
                     description=getResources().getString(R.string.Snow_fr);
+
                 }else if (description.equals("Storm")){
-                    BackTablet.setBackgroundResource(R.drawable.storm_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.storm_p);
                     description=getResources().getString(R.string.Storm_fr);
+
                 }else if (description.equals("Fog")){
-                    BackTablet.setBackgroundResource(R.drawable.foggy_p);
+
+                    appropriateBackground.setBackgroundResource(R.drawable.foggy_p);
                     description=getResources().getString(R.string.Foggy_fr);
+
                 }
 
 
@@ -327,11 +365,11 @@ public class DetailFragment extends Fragment implements LoaderManager.LoaderCall
             boolean isMetric = Utility.isMetric(getActivity());
 
             TextView DetailCoutBy = (TextView) getActivity().findViewById(R.id.detail_CountBy);
-            DetailCoutBy.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "fonts/ADastNevis.ttf"));
+            DetailCoutBy.setTypeface(WhichFont.Fontmethod(getActivity(), ""));
             if (isMetric){
-                DetailCoutBy.setText("براساس سانتیگراد");
+                DetailCoutBy.setText(mcontext.getString(R.string.degrees_c));
             }else{
-                DetailCoutBy.setText("براساس فارنهایت");
+                DetailCoutBy.setText(mcontext.getString(R.string.degrees_f));
             }
 
         }

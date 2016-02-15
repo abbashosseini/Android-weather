@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.support.v7.appcompat.R;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
@@ -35,7 +36,7 @@ public class SService extends IntentService {
     public static final String LOCATION_QUERY_EXTRA = "lqe";
     private final String LOG_TAG = SService.class.getSimpleName();
     public SService() {
-        super("Sunshine");
+        super("WeatherNews");
     }
 
     @Override

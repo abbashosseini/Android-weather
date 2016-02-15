@@ -10,7 +10,7 @@ import android.view.MenuItem;
 public class DetailActivity extends ActionBarActivity {
 
     public static final String DATE_KEY = "forecast_date";
-    private static final String LOCATION_KEY = "location";
+    protected static final String LOCATION_KEY = "location";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class DetailActivity extends ActionBarActivity {
             Bundle arguments = new Bundle();
             arguments.putString(DetailActivity.DATE_KEY, date);
 
-            DetailFragment fragment = new DetailFragment();
+            DetailFragment fragment = new DetailFragment(getApplicationContext());
             fragment.setArguments(arguments);
 
             getSupportFragmentManager().beginTransaction()

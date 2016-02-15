@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hosseini.abbas.havakhabar.app.Other.WhichFont;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
 import com.hosseini.abbas.havakhabar.app.sync.SSyncAdapter;
 
@@ -30,10 +31,10 @@ public class SettingsActivity extends PreferenceActivity
         setContentView(R.layout.devloper);
 
         TextView dev = (TextView) findViewById(R.id.dev);
-        dev.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/CaviarDreams.ttf"));
+        dev.setTypeface(WhichFont.Fontmethod(getApplicationContext(), "fonts/CaviarDreams.ttf"));
 
         TextView sazande = (TextView) findViewById(R.id.sazande);
-        sazande.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/Far_TitrDF.ttf"));
+        sazande.setTypeface(WhichFont.Fontmethod(getApplicationContext(), "fonts/Far_TitrDF.ttf"));
 
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_location_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_units_key)));

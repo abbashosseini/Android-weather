@@ -14,7 +14,6 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
 
     double longitude = 0l;
     double latitude = 0l;
-    private final String LOG_TAG = MainActivity.class.getSimpleName();
 
     private boolean mTwoPane;
 
@@ -35,7 +34,7 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
             // fragment transaction.
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.weather_detail_container, new DetailFragment())
+                        .replace(R.id.weather_detail_container, new DetailFragment(getApplicationContext()))
                         .commit();
             }
         } else {
@@ -81,7 +80,7 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
             Bundle args = new Bundle();
             args.putString(DetailActivity.DATE_KEY, date);
 
-            DetailFragment fragment = new DetailFragment();
+            DetailFragment fragment = new DetailFragment(getApplicationContext());
             fragment.setArguments(args);
 
             getSupportFragmentManager().beginTransaction()

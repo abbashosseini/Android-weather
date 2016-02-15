@@ -1,12 +1,14 @@
-package com.hosseini.abbas.havakhabar.app;
+package com.hosseini.abbas.havakhabar.app.Other;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.dateparser.hosseini.persiantime.dates.PersianDate.CurrentDate;
+import com.dateparser.hosseini.persiantime.dates.PersianDate.GenerateDates;
+import com.hosseini.abbas.havakhabar.app.R;
 import com.hosseini.abbas.havakhabar.app.data.WeatherContract;
-import com.hosseini.abbas.havakhabar.app.dates.CalenderTool;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -14,24 +16,27 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Utility {
 
     // Format used for storing dates in the database.  ALso used for converting those strings
-// back into date objects for comparison/processing.
+    // back into date objects for comparison/processing.
     public static final String DATE_FORMAT = "yyyyMMdd";
+    private static CurrentDate currentDate = new CurrentDate();
 
     public static String getPreferredLocation(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getString(context.getString(R.string.pref_location_key),
+        return prefs.getString(
+                context.getString(R.string.pref_location_key),
                 context.getString(R.string.pref_location_default));
     }
 
     public static String formatTemperature(Context context, double temperature) {
         // Data stored in Celsius by default.  If user prefers to see in Fahrenheit, convert
         // the values here.
-        String suffix = "\u00B0";
         if (!isMetric(context)) {
             temperature = (temperature * 1.8) + 32;
         }
@@ -76,7 +81,7 @@ public class Utility {
             return context.getString(
                     R.string.format_full_friendly_date,
                     today,
-                    getFormattedMonthDay(context, dateStr));
+                    getFormattedMonthDay(dateStr));
         } else {
             Calendar cal = Calendar.getInstance();
             cal.setTime(todayDate);
@@ -87,154 +92,23 @@ public class Utility {
                 // If the input date is less than a week in the future, just return the day name.
                 return getDayName(context, dateStr);
             } else {
-                // Otherwise, use the form "Mon Jun 3"
-                SimpleDateFormat shortenedDateFormat = new SimpleDateFormat("EEE MM dd",Locale.ENGLISH);
-                String SplitDate =  shortenedDateFormat.format(inputDate);
 
-//                Log.v("rrrrrrrrrttttttttttttttttt",SplitDate);
-                String[] ArraySplitDate = SplitDate.split(" ");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                String stringDate = dateFormat.format(inputDate);
 
-                CalenderTool ct = new CalenderTool(Calendar.getInstance().get(Calendar.YEAR),
-                                                    Integer.parseInt(ArraySplitDate[1]),
-                                                    Integer.parseInt(ArraySplitDate[2]));
-
-                String SplitRealDate =   ct.getIranianDate();
-                String[] ArraySplitRealDate = SplitRealDate.split("/");
-
-                String YEAR_Date = ArraySplitRealDate[0];
-                int MonthINt = Integer.parseInt(ArraySplitRealDate[1]);
-                String MonthStr = ArraySplitRealDate[1];
-                int DayStr = Integer.parseInt(ArraySplitRealDate[2]);
-
-                switch (MonthINt) {
-                    case 1:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "فروردین";
-                        }else{
-                            MonthStr = "ارديبهشت";
-                            DayStr = DayStr % 31;
-                        }
-
-                        break;
-                    case 2:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "ارديبهشت";
-                        }else{
-                            MonthStr = "خرداد";
-                            DayStr = DayStr % 31;
-                        }
-
-                        break;
-                    case 3:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "خرداد";
-                        }else{
-                            MonthStr = "تير";
-                            DayStr = DayStr % 31;
-                        }
-
-                        break;
-                    case 4:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "تير";
-                        }else{
-                            MonthStr = "مرداد";
-                            DayStr = DayStr % 31;
-                        }
-
-                        break;
-                    case 5:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "مرداد";
-                        }else{
-                            MonthStr = "شهريور";
-                            DayStr = DayStr % 31;
-                        }
-
-                        break;
-                    case 6:
-                        if (DayStr % 31 < 31) {
-                            MonthStr = "شهريور";
-                        }else{
-                            MonthStr = "مهر";
-                            DayStr = DayStr % 30;
-                        }
-
-                        break;
-                    case 7:
-                        if (DayStr % 30 < 30) {
-                            MonthStr = "مهر";
-                        }else{
-                            MonthStr = "آبان";
-                            DayStr = DayStr % 30;
-                        }
-
-                        break;
-                    case 8:
-                        if (DayStr % 30 < 30) {
-                            MonthStr = "آبان";
-                        }else{
-                            MonthStr = "آذر";
-                            DayStr = DayStr % 30;
-                        }
-
-                        break;
-                    case 9:
-                        if (DayStr % 30 < 30) {
-                            MonthStr = "آذر";
-                        }else{
-                            MonthStr = "دي";
-                            DayStr = DayStr % 30;
-                        }
-
-                        break;
-                    case 10:
-                        if (DayStr % 30 < 30) {
-                            MonthStr = "دي";
-                        }else{
-                            MonthStr = "بهمن";
-                            DayStr = DayStr % 30;
-                        }
-
-                        break;
-                    case 11:
-
-                        if (DayStr % 30 < 30) {
-                            MonthStr = "بهمن";
-                        }else{
-                            MonthStr = "اسفند";
-                            DayStr = DayStr % 29;
-                        }
-                        break;
-                    case 12:
-                        if (DayStr % 29 < 29) {
-                            MonthStr = "اسفند";
-                        }else{
-                            MonthStr = "فروردین";
-                            DayStr = DayStr % 31;
-                        }
-                        break;
+                if (Locale.getDefault().getLanguage().equals("en")) {
+                    dateFormat = new SimpleDateFormat("MMM dd", Locale.ENGLISH);
+                    stringDate = dateFormat.format(inputDate);
+                    return stringDate;
                 }
 
-                String DayWeek = "";
-                if (ArraySplitDate[0].equals("Sun"))
-                    DayWeek = "يکشنبه";
-                else if (ArraySplitDate[0].equals("Mon"))
-                    DayWeek = "دوشنبه";
-                else if (ArraySplitDate[0].equals("Tue"))
-                    DayWeek = "سه شنبه";
-                else if (ArraySplitDate[0].equals("Wed"))
-                    DayWeek = "چهارشنبه";
-                else if (ArraySplitDate[0].equals("Thu"))
-                    DayWeek = "پنج شنبه";
-                else if (ArraySplitDate[0].equals("Fri"))
-                    DayWeek = "جمعه";
-                else if (ArraySplitDate[0].equals("Sat"))
-                    DayWeek = "شنبه";
+                return currentDate.getdateWithMonthLetters(
+                        GenerateDates.getyourDate(stringDate));
 
-                return DayWeek+ " " +DayStr+" "+MonthStr;
+
             }
         }
+
     }
 
     /**
@@ -274,159 +148,40 @@ public class Utility {
                 }
             }
         } catch (ParseException e) {
-            e.printStackTrace();
+            Log.e(Utility.class.getSimpleName(),
+                    "Date invalid exception ! ", e);
             // Couldn't process the date correctly.
-            return "";
+            return dateStr;
         }
     }
 
     /**
      * Converts db date format to the format "Month day", e.g "June 24".
-     * @param context Context to use for resource localization
      * @param dateStr The db formatted date string, expected to be of the form specified
      *                in Utility.DATE_FORMAT
      * @return The day in the form of a string formatted "December 6"
      */
 
-    public static String getFormattedMonthDay(Context context, String dateStr){
-        SimpleDateFormat dbDateFormat = new SimpleDateFormat(Utility.DATE_FORMAT,Locale.ENGLISH);
-        SimpleDateFormat monthDayFormat= null;
-        String monthDayString = null;
-        Date inputDate = null;
-        try {
-            inputDate = dbDateFormat.parse(dateStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        monthDayFormat
-                = new SimpleDateFormat("MM dd",Locale.ENGLISH);
-        monthDayString = monthDayFormat.format(inputDate);
+    public static String getFormattedMonthDay(String dateStr){
 
-        String[] ArraySplitDate = monthDayString.split(" ");
+        Pattern fixDate = Pattern.compile("(\\d{4})(\\d{1,2})(\\d{1,2})");
+        Matcher correctDate = fixDate.matcher(dateStr);
+        correctDate.find();
 
-        CalenderTool ct = new CalenderTool(Calendar.getInstance().get(Calendar.YEAR),
-                Integer.parseInt(ArraySplitDate[0]),
-                Integer.parseInt(ArraySplitDate[1]));
+        String Nowiscorrect = String.format("%s/%s/%s",
+                                    correctDate.group(1),
+                                    correctDate.group(2),
+                                    correctDate.group(3));
 
-        String SplitRealDate =   ct.getIranianDate();
-        String[] ArraySplitRealDate = SplitRealDate.split("/");
+        String MonthAndDay = currentDate.getdateWithMonthLetters(Nowiscorrect);
 
-        String YEAR_Date = ArraySplitRealDate[0];
-        int MonthINt = Integer.parseInt(ArraySplitRealDate[1]);
-        String MonthStr = ArraySplitRealDate[1];
-        int DayStr = Integer.parseInt(ArraySplitRealDate[2]);
 
-        switch (MonthINt) {
-            case 1:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "فروردین";
-                }else{
-                    MonthStr = "ارديبهشت";
-                    DayStr = DayStr % 31;
-                }
+        Pattern rtl_CHARACTERS = Pattern.compile("^[۱-۹]+");
+        Matcher findTheYear = rtl_CHARACTERS.matcher(MonthAndDay);
+        boolean isDone = findTheYear.find();
 
-                break;
-            case 2:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "ارديبهشت";
-                }else{
-                    MonthStr = "خرداد";
-                    DayStr = DayStr % 31;
-                }
+        return isDone ? findTheYear.replaceAll("") : "";
 
-                break;
-            case 3:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "خرداد";
-                }else{
-                    MonthStr = "تير";
-                    DayStr = DayStr % 31;
-                }
-
-                break;
-            case 4:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "تير";
-                }else{
-                    MonthStr = "مرداد";
-                    DayStr = DayStr % 31;
-                }
-
-                break;
-            case 5:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "مرداد";
-                }else{
-                    MonthStr = "شهريور";
-                    DayStr = DayStr % 31;
-                }
-
-                break;
-            case 6:
-                if (DayStr % 31 < 31) {
-                    MonthStr = "شهريور";
-                }else{
-                    MonthStr = "مهر";
-                    DayStr = DayStr % 30;
-                }
-
-                break;
-            case 7:
-                if (DayStr % 30 < 30) {
-                    MonthStr = "مهر";
-                }else{
-                    MonthStr = "آبان";
-                    DayStr = DayStr % 30;
-                }
-
-                break;
-            case 8:
-                if (DayStr % 30 < 30) {
-                    MonthStr = "آبان";
-                }else{
-                    MonthStr = "آذر";
-                    DayStr = DayStr % 30;
-                }
-
-                break;
-            case 9:
-                if (DayStr % 30 < 30) {
-                    MonthStr = "آذر";
-                }else{
-                    MonthStr = "دي";
-                    DayStr = DayStr % 30;
-                }
-
-                break;
-            case 10:
-                if (DayStr % 30 < 30) {
-                    MonthStr = "دي";
-                }else{
-                    MonthStr = "بهمن";
-                    DayStr = DayStr % 30;
-                }
-
-                break;
-            case 11:
-
-                if (DayStr % 30 < 30) {
-                    MonthStr = "بهمن";
-                }else{
-                    MonthStr = "اسفند";
-                    DayStr = DayStr % 29;
-                }
-                break;
-            case 12:
-                if (DayStr % 29 < 29) {
-                    MonthStr = "اسفند";
-                }else{
-                    MonthStr = "فروردین";
-                    DayStr = DayStr % 31;
-                }
-                break;
-        }
-
-        return DayStr+" "+MonthStr;
     }
 
     /**
@@ -455,30 +210,30 @@ public class Utility {
 
         // From wind direction in degrees, determine compass direction as a string (e.g NW)
 
-        String direction = "نامشخص";
-        String AzSamte = "از سمت ";
+        String direction = context.getString(R.string.unknown);
+        String PlusOne = context.getString(R.string.wind_direction_name);
         if (degrees >= 337.5 || degrees < 22.5) {
-            direction = "شمال";//N
+            direction = context.getString(R.string.Wind_North);//N
         } else if (degrees >= 22.5 && degrees < 67.5) {
-            direction = "شمال شرقی";//NE
+            direction = context.getString(R.string.Wind_northeast);//NE
         } else if (degrees >= 67.5 && degrees < 112.5) {
-            direction = "شرق";//E
+            direction = context.getString(R.string.Wind_Eastern);//E
         } else if (degrees >= 112.5 && degrees < 157.5) {
-            direction = "جنوب شرقی";//SE
+            direction = context.getString(R.string.Wind_Southeast);//SE
         } else if (degrees >= 157.5 && degrees < 202.5) {
-            direction = "جنوب";//S
+            direction = context.getString(R.string.Wind_South);//S
         } else if (degrees >= 202.5 && degrees < 247.5) {
-            direction = " جنوب غربی";//SW
+            direction = context.getString(R.string.Wind_Southwest);//SW
         } else if (degrees >= 247.5 && degrees < 292.5) {
-            direction = "غرب";//W
+            direction = context.getString(R.string.Wind_Western);//W
         } else if (degrees >= 292.5 || degrees < 22.5) {
-            direction = "شمال غرب";//NW
+            direction = context.getString(R.string.Wind_NorthWest);//NW
         }
 
 
-        if (!direction.equals("نامشخص"))
+        if (!direction.equals(context.getString(R.string.unknown)))
         {
-            direction = AzSamte+direction;
+            direction = String.format("%s %s", PlusOne, direction);
         }
         return String.format(context.getString(windFormat), windSpeed, direction);
     }
@@ -532,7 +287,6 @@ public class Utility {
 
         // Based on weather code data found at:
         // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
-// http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
 
 
         if (weatherId >= 200 && weatherId <= 232) {

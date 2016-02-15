@@ -9,10 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 
-/**
- * Created by paulshi on 9/23/14.
- */
-
 public class WeatherProvider extends ContentProvider {
 
     // The URI Matcher used by this content provider.

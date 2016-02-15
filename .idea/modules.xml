@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Persian-weather.iml" filepath="$PROJECT_DIR$/Android-Persian-weather.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/havaApp.iml" filepath="$PROJECT_DIR$/havaApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/persian-time-release/persian-time-release.iml" filepath="$PROJECT_DIR$/persian-time-release/persian-time-release.iml" />
     </modules>
   </component>
 </project>
