@@ -1,7 +1,7 @@
 
 ### Android App:
 
->this App base on **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/app-release.apk) APK File.;
+>this App base on Sunshine2 app (udacity) and **openweathermap** Weather webste and You can [Download](https://raw.githubusercontent.com/abbashosseini/Android-Persian-weather/master/app/app-release.apk) APK File.;
 
 #### Language Support :
 
@@ -188,7 +188,7 @@ example
 ###License
 
 	Copyright (C) 2015 AbbasHosseini
-	Copyright (C) 2013 Google, inc
+	Copyright (C) 2013 udacity
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
