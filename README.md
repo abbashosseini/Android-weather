@@ -23,82 +23,6 @@
 its get *14 days* data weather from *server* or you can limit it for that see [here](http://openweathermap.org/forecast5) or now you can use **16 days** see [here](http://openweathermap.org/forecast16) for **API**.
 
 this app get weather one time for *14 days* and put it in [*SQLITE*](http://developer.android.com/guide/topics/providers/content-providers.html) Database if you have problem with connection to [server ](http://openweathermap.org/) its actually server limitation not application bug .
-
-
-#Contribute:
-
-
-###you can see *api* here :
-
-	http://openweathermap.org/api
-
-its little changing happen in **openweathermap** webSite.app now work with Temprory APPID Create Valid one for your app 
-i worte this couple months ago.
-
-you can with this link see what country, city **openweathermap** support and see samples :
-
-	http://bulk.openweathermap.org/sample/
-
-
-you can see Weather Icons and Condition Codes in here :
-
-
-####ICONS : 
-
-<table>
-		<tbody><tr>
-			<th> Day </th>
-			<th>Night  </th>
-			<th></th>
-		</tr>
-		<tr>
-			<td>01d.png  <img src="http://openweathermap.org/img/w/01d.png" alt="">  </td>
-			<td> 01n.png  <img src="http://openweathermap.org/img/w/01n.png" alt="">  </td>
-			<td> sky is clear </td>
-		</tr>
-		<tr>
-			<td>02d.png  <img src="http://openweathermap.org/img/w/02d.png" alt=""> </td>
-			<td> 02n.png  <img src="http://openweathermap.org/img/w/02n.png" alt="">  </td>
-			<td> few clouds </td>
-		</tr>
-		<tr>
-			<td>03d.png  <img src="http://openweathermap.org/img/w/03d.png" alt="">  </td>
-			<td> 03n.png  <img src="http://openweathermap.org/img/w/03n.png" alt="">  </td>
-			<td> scattered clouds </td>
-		</tr>
-		<tr>
-			<td>04d.png  <img src="http://openweathermap.org/img/w/04d.png" alt=""> </td>
-			<td> 04n.png  <img src="http://openweathermap.org/img/w/04n.png" alt="">  </td>
-			<td> broken clouds </td>
-		</tr>
-		<tr>
-			<td>09d.png  <img src="http://openweathermap.org/img/w/09d.png" alt="">  </td>
-			<td> 09n.png  <img src="http://openweathermap.org/img/w/09n.png" alt="">  </td>
-			<td> shower rain </td>
-		</tr>
-		<tr>
-			<td>10d.png  <img src="http://openweathermap.org/img/w/10d.png" alt="">  </td>
-			<td> 10n.png  <img src="http://openweathermap.org/img/w/10n.png" alt="">  </td>
-			<td> Rain </td>
-		</tr>
-		<tr>
-			<td>11d.png  <img src="http://openweathermap.org/img/w/11d.png" alt="">  </td>
-			<td> 11n.png  <img src="http://openweathermap.org/img/w/11n.png" alt="">  </td>
-			<td> Thunderstorm </td>
-		</tr>
-		<tr>
-			<td>13d.png  <img src="http://openweathermap.org/img/w/13d.png" alt="">  </td>
-			<td> 13n.png  <img src="http://openweathermap.org/img/w/13n.png" alt="">  </td>
-			<td> snow  </td>
-		</tr>
-		<tr>
-			<td>50d.png  <img src="http://openweathermap.org/img/w/50d.png" alt="">  </td>
-			<td> 50n.png  <img src="http://openweathermap.org/img/w/50n.png" alt="">  </td>
-			<td> mist </td>
-		</tr>
-	</tbody></table>
-
-if you want TransLate this app  for your own language and you wanna Contribute, see *Weather_Condition_Codes*  for how *OpenWeatherMap* Works in [here](http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes).
 	
 ###FORMAT:
 
@@ -185,18 +109,3 @@ example
 	</weatherdata>
 	
 ```
-###License
-
-	Copyright (C) 2015 AbbasHosseini
-	Copyright (C) 2013 udacity
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
-	
-	    http://www.apache.org/licenses/LICENSE-2.0
-	
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.
